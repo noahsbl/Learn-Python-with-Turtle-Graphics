@@ -1,0 +1,318 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="lib/brython/brython.js"></script>
+    <script type="text/javascript" src="lib/brython/brython_stdlib.js"></script>
+
+    <script type="text/javascript" src="lib/codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="lib/codemirror/python.js"></script>
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel="stylesheet" href="lib/codemirror/themes/vscode-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/themes/vscode-light.css">
+
+    <script type="text/javascript" src="lib/qrcode/qrcode.min.js"></script>
+    <script type="text/javascript" src="lib/d3/d3.v7.min.js"></script>
+
+    <script type="text/python" src="web_app.py"></script>
+
+    <link rel="stylesheet" href="style/body.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/canvas.css">
+    <link rel="stylesheet" href="style/code-editor.css">
+    <link rel="stylesheet" href="style/console.css">
+    <link rel="stylesheet" href="style/container.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/scrollbar.css">
+    <link rel="stylesheet" href="style/theme.css">
+    <link rel="stylesheet" href="style/tutorial.css">
+
+    <link rel="icon" href="images/turtle_lightmode.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/turtle_lightmode.ico" type="image/x-icon">
+
+    <title>Python lernen mit Turtle Graphics</title>
+</head>
+
+<body onload="brython()">
+    <!--                             Navbar                                       -->
+    <div class="navbar-container" id="navbar_container">
+        <div class="navbar-container-left">
+            <img id="navbar-image" src="images/turtle_darkmode.png" class="navbar-image">
+            <h3 id="navbar_title" class="navbar-title">Python lernen mit Turtle Graphics</h3>
+
+            <!--                         Level Select Buttons                         -->
+            <button id="previous_level" class="navbar-button-left next-previous-button">-</button>
+            <h3 id="level_title" class="level-title">Level 1</h3>
+            <button id="next_level" class="navbar-button-left next-previous-button">+</button>
+        </div>
+        <div class="navbar-container-right ">
+
+            <!--                         Dropdown                                     -->
+            <div id="dropdown" class="dropdown">
+                <button id="dropdown-button" class="dropdown-button">Exportieren</button>
+                <ul id="dropdown-menu" class="dropdown-menu">
+                    <li><button id="export_download" class="dropdown-button">Download</button></li>
+                    <li><button id="export_print" class="dropdown-button">Drucken</button></li>
+                    <li><button id="export_qrcode" class="dropdown-button">QR-Code</button></li>
+                </ul>
+            </div>
+
+            <!--                         Dark Mode Button                             -->
+            <button id="dark-mode-button" class="navbar-button-right darkmode-button">Dark Mode</button>
+        </div>
+    </div>
+
+    <!--                             2 Container on left and right                -->
+    <div class="side-content-container">
+
+        <!--                         Left Container                               -->
+        <div class="side-container side-left">
+            <div class="vertical-spacer"></div>
+
+            <!--                     Tutorial Container                           -->
+            <div class="tutorial-container area-container" id="tutorial-area">
+                <div id="tutorial" class="tutorial"></div>
+            </div>
+            <div class="vertical-spacer"></div>
+
+            <!--                     Code-Editor Container                        -->
+            <div class="code-editor-container area-container" id="code-editor-area">
+                <span id="code-editor-source" class="code-editor-font" style="height:100%"></span>
+            </div>
+            <div class="vertical-spacer"></div>
+
+            <!--                     Run and Debug Buttons Container              -->
+            <div class="button-container" id="button-area">
+                <button id="run_code" class="run-button" tabindex="-1">Run</button>
+                <button id="show_solution" class="solution-button button-right" tabindex="-1">Lösung</button>
+                <button id="show_init_code" class="initcode-button button-right" tabindex="-1">Initialer Code</button>
+                <button id="toggle_coordinate_system" class="coordinatesystem-button button-right"
+                    tabindex="-1">Koordinatensystem</button>
+            </div>
+
+            <div class="vertical-spacer"></div>
+        </div>
+
+        <!--                         Right Container                              -->
+        <div class="side-container side-right">
+            <div class="vertical-spacer"></div>
+
+            <!--                     Canvas Container                             -->
+            <div class="canvas-container area-container" id="canvas-area">
+                <p class="canvas-container-text">Canvas</p>
+                <div>
+                    <div id="canvas" class="canvas"></div>
+                    <div id="coordinates" class="coordinates" style="display: block;"></div>
+                </div>
+            </div>
+
+            <div class="vertical-spacer"></div>
+
+            <!--                     Console Container                            -->
+            <div class="console-container area-container" id="console-area">
+                <p class="console-container-text">Konsole</p>
+                <div class="console" id="console"></div>
+            </div>
+            <div class="vertical-spacer"></div>
+        </div>
+    </div>
+
+    <!--                     Print Modal                                          -->
+    <div id="print-modal" class="modal">
+        <div id="print-modal-content" class="print-modal-content">
+            <span class="close" id="printModalCloseButton">&times;</span>
+            <p class="modal-elements">In paar Sekunden geht es weiter!</p>
+            <p class="modal-elements">Gleich kann ein Drucker gewählt werden.</p>
+        </div>
+    </div>
+
+    <!--                     QR-Code Modal                                        -->
+    <div id="qrcodeModal" class="modal">
+        <div id="qrcode-modal-content" class="qrcode-modal-content">
+            <span class="close" id="qrCodeModalCloseButton">&times;</span>
+            <p id="message" class="modal-elements">Warten auf Upload ...</p>
+            <div id="qrCodeToDownload" class="modal-elements"></div>
+            <a id="linkToDownload" class="modal-elements"></a>
+            <p id="errorMessage" class="modal-elements error-message"></p>
+        </div>
+    </div>
+
+    <!--                     Init-Code Modal                                       -->
+    <div id="initcodeModal" class="modal">
+        <div id="initcode-modal-content" class="initcode-solution-modal-content">
+            <div class="close-container">
+                <span class="close" id="initcodeCodeModalCloseButton">&times;</span>
+            </div>
+            <div id="init_code_container" class="init-modal-container">
+                <h3 class="initcode-solution-modal-title">Start-Code des Levels</h3>
+                <div class="init-code-container">
+                    <pre
+                        class="pre-block"><code spellcheck="false" data-gramm="false"><span id="init_code" class="code-editor-font"></span></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     Solution Modal                                       -->
+    <div id="solutionModal" class="modal">
+        <div id="solution-modal-content" class="initcode-solution-modal-content">
+            <div class="close-container">
+                <span class="close" id="solutionCodeModalCloseButton">&times;</span>
+            </div>
+            <div id="solution_code_container" style="display: none;" class="solution-step-container">
+                <h3 class="initcode-solution-modal-title">Vollständige Lösung</h3>
+                <div class="solution-code-container">
+                    <pre
+                        class="pre-block"><code spellcheck="false" data-gramm="false"><span  id="solution_code" class="code-editor-font"></span></code></pre>
+                </div>
+                <div class="modal-spacer"></div>
+                <div class="solution-button-container">
+                    <button id="paste_solution" class="paste-solution-button">In Code-Editor einfügen</button>
+                </div>
+                <div class="modal-spacer"></div>
+            </div>
+
+            <div id="solution_comments_container" class="solution-step-container">
+                <h3 class="initcode-solution-modal-title">Kommentare zur Lösung (Vollständige Lösung mit Passwort)</h3>
+                <div class="solution-code-container">
+                    <pre
+                        class="pre-block"><code spellcheck="false" data-gramm="false"><span  id="solution_comments" class="code-editor-font"></span></code></pre>
+                </div>
+                <div class="modal-spacer"></div>
+                <div class="solution-button-container">
+                    <input type="password" id="solution_password" class="solution-password"
+                        placeholder="Passwort für Code-Lösung">
+                    <button id="show_solution_code" class="solution-password-button">></button>
+                </div>
+                <div class="modal-spacer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     Levels Container (html_content) for export           -->
+    <div id="levelsContainer" class="levels-container" hidden>
+
+        <head>
+            <meta charset="utf-8">
+            <title>Export</title>
+
+            <style>
+                .code-hint {
+                    border-left: #8787872a solid 29px;
+                    padding-left: 10px;
+                }
+
+                .code-hint-font {
+                    font-size: 14px;
+                }
+
+                .code-editor-font {
+                    font-size: 14px;
+                }
+
+                .levels-container {
+                    margin: 100px;
+                }
+
+                .first-level-container {
+                    margin-top: 100px;
+                }
+
+                .empty-level-container {
+                    margin-bottom: 100px;
+                }
+
+                .code-container {
+                    height: max-content;
+                    margin-bottom: 20px;
+                }
+            </style>
+
+            <script>
+                var printExport = false;
+                var printCounter = 0;
+
+                function showPrintModal() {
+                    document.getElementById('overlay').style.display = 'block';
+                    document.getElementById('printModal').style.display = 'block';
+                }
+
+                function hidePrintModal() {
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('printModal').style.display = 'none';
+                }
+
+                function resetAnimations(svg) {
+                    svg.setCurrentTime(0);
+                    svg.unpauseAnimations();
+                }
+
+                function decreasePrintCounter() {
+                    printCounter--;
+                    if (printCounter == 0) {
+                        window.print();
+                    }
+                }
+
+                function setEventListenerOnResetAnimations(lastFrame, svg) {
+                    lastFrame.addEventListener("endEvent", () => {
+                        setTimeout(() => {
+                            resetAnimations(svg);
+                        }, 2000);
+                    });
+                }
+
+                function setEventListenerOnDecreasePrintCounter(lastFrame) {
+                    printCounter++;
+                    lastFrame.addEventListener("endEvent", () => {
+                        decreasePrintCounter();
+                    });
+                }
+
+                function setEventListenersOnEndOfLastFrame() {
+                    var svgElements = document.querySelectorAll('#levelsContainer svg');
+
+                    svgElements.forEach(svg => {
+                        const animateElements = svg.querySelectorAll(['animate', 'animateMotion', 'animateTransform']);
+                        const lastFrame = animateElements[animateElements.length - 1];
+
+                        if (!lastFrame.id.endsWith("frame4")) {
+                            if (printExport == true) {
+                                setEventListenerOnDecreasePrintCounter(lastFrame);
+                                svg.unpauseAnimations();
+                            } else {
+                                setEventListenerOnResetAnimations(lastFrame, svg);
+                            }
+                        }
+                    });
+
+                    if (printExport == true && printCounter == 0) {
+                        window.print();
+                    }
+                }
+
+                function closeTab() {
+                    window.opener.postMessage('new_window_closed', '*');
+                    window.close();
+                }
+
+                window.addEventListener('load', () => {
+                    if (printExport == true) {
+                        document.title = "Tab zum Drucken"
+                    }
+                    setEventListenersOnEndOfLastFrame();
+                });
+
+                window.onafterprint = closeTab;
+            </script>
+        </head>
+
+        <body>
+            <h1>Deine Coding-Ergebnisse</h1>
+        </body>
+    </div>
+</body>
+
+</html>

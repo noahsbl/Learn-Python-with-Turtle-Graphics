@@ -1,0 +1,182 @@
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.close-container {
+    float: right;
+    height: 5%;
+    max-height: 5%;
+    width: 5%;
+}
+
+.modal-spacer {
+    height: 3.33%;
+}
+
+.close {
+    color: #878787;
+    float: right;
+    padding-right: 5pt;
+    font-size: 28px;
+    font-weight: bold;
+    height: 100%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*                             print modal                             */
+
+.print-modal-content {
+    margin-top: 10%;
+    margin-left: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--normal-shadow);
+    padding-bottom: 10pt;
+    width: 20%;
+    height: min-content;
+}
+
+/*                             qrcode modal                            */
+
+.qrcode-modal-content {
+    margin-top: 10%;
+    margin-left: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--normal-shadow);
+    padding-bottom: 10pt;
+    width: 20%;
+    height: min-content;
+}
+
+.modal-elements {
+    padding: 10pt;
+    margin: 0;
+    text-align: center;
+}
+
+.error-message {
+    display: none;
+    color: red;
+}
+
+/*                             solution modal                          */
+
+.initcode-solution-modal-content {
+    --height: 60;
+    --width: 60;
+
+    margin-top: 10%;
+    margin-left: 20%;
+    background-color: white;
+    box-shadow: var(--normal-shadow);
+
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.solution-step-container {
+    margin-left: 1.66%;
+    margin-right: 1.66%;
+    width: 96.66%;
+}
+
+.solution-code-container {
+    overflow: auto;
+    height: 78%;
+    width: 100%;
+}
+
+.solution-button-container {
+    height: 8.33%;
+    width: 100%
+}
+
+.paste-solution-button {
+    --height: 100;
+    --width: 40;
+    --parent-height: 5;
+    --parent-width: 60;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.solution-password {
+    --height: 100;
+    --width: 35.33;
+    --parent-height: 5;
+    --parent-width: 60;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+    font-size: 18.72px;
+    margin-right: 1.66%;
+    outline: none;
+}
+
+.solution-password-button {
+    --height: 100;
+    --width: 4;
+    --parent-height: 5;
+    --parent-width: 60;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    /* width: calc(var(--width) * 1%); */
+    aspect-ratio: 1 / 1;
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+    margin-right: 1.66%;
+}
+
+/*                             initcode modal                          */
+.init-modal-container {
+    margin-left: 1.66%;
+    margin-right: 1.66%;
+    width: 96.66%;
+}
+
+.init-code-container {
+    overflow: auto;
+    height: 92%;
+    width: 100%;
+}
+
+.initcode-solution-modal-title {
+    height: 6%;
+    width: 90%;
+    max-height: 6%;
+    padding-top: 0.5%;
+    margin: 0;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

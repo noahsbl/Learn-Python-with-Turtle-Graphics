@@ -1,0 +1,203 @@
+:root {
+    --nav-button-height: 66.4;
+    --normal-shadow: 0px 1px 12px rgba(171, 171, 171, 0.5);
+    --hovered-shadow: 1px 2px 24px rgba(119, 119, 119, 0.5);
+    --button-left-margin: 0 1.94% 0 0;
+    --button-right-margin: 0 0 0 1.94%;
+    --radius: 1%;
+    --parent-height: 100;
+    --parent-width: 100;
+    --height: 100;
+    --width: 100;
+    --aspect-ratio: 1.97;
+    --navbar-left-margin: 1.67%;
+    --navbar-right-margin: 2.5%;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    background-color: white;
+    border: none;
+    box-shadow: var(--normal-shadow);
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+}
+
+button:hover {
+    box-shadow: var(--hovered-shadow);
+}
+
+button:active {
+    background-color: rgb(127, 127, 127);
+}
+
+.navbar-button-left {
+    margin-left: var(--navbar-left-margin);
+}
+
+.navbar-button-right {
+    margin-right: var(--navbar-right-margin);
+}
+
+.next-previous-button {
+    --parent-height: 7;
+    --parent-width: 70;
+
+    --height: var(--nav-button-height);
+    --width: calc(((var(--height) * var(--parent-height)) / var(--parent-width)) / var(--aspect-ratio));
+
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    float: left;
+    height: calc(var(--height) * 1%);
+    aspect-ratio: 1 / 1;
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.button-right {
+    margin: var(--button-right-margin);
+    float: right;
+}
+
+.run-button {
+    --height: 100;
+    --width: 9;
+    --parent-height: 5;
+    --parent-width: 48.5;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+    margin: var(--button-left-margin);
+    float: left;
+}
+
+.coordinatesystem-button {
+    --height: 100;
+    --width: 35;
+    --parent-height: 5;
+    --parent-width: 48.5;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.initcode-button {
+    --height: 100;
+    --width: 27;
+    --parent-height: 5;
+    --parent-width: 48.5;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.solution-button {
+    --height: 100;
+    --width: 15;
+    --parent-height: 5;
+    --parent-width: 48.5;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.darkmode-button {
+    --height: var(--nav-button-height);
+    --width: 37;
+    --parent-height: 7;
+    --parent-width: 40;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    float: right;
+    height: calc(var(--height) * 1%);
+    width: calc(var(--width) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+/*                             dropdown                            */
+
+.dropdown-button,
+.dropdown-menu button {
+    --height: var(--nav-button-height);
+    --width: 40;
+    --parent-height: 7;
+    --parent-width: 40;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+
+    width: 100%;
+    height: calc(var(--height) * 1%);
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+
+.dropdown {
+    margin-right: var(--navbar-right-margin);
+    width: 40%;
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.dropdown-menu {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: var(--normal-shadow);
+    padding-left: 0;
+    padding-bottom: 0.5%;
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    height: 300%;
+}
+
+.dropdown-menu button {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: var(--normal-shadow);
+    height: 33.33%;
+
+    --height: var(--nav-button-height);
+    --parent-height: 7;
+    --parent-width: 40;
+    --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
+    --radius-height: calc(100 / ((var(--parent-height) * var(--height)) / 100));
+    border-radius: calc(var(--radius) * var(--radius-width)) / calc(var(--radius) * (var(--radius-height)));
+}
+
+.dropdown-menu button:hover {
+    box-shadow: inset var(--hovered-shadow);
+
+}
+
+.dropdown-menu button::active {
+    background-color: rgb(127, 127, 127);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
