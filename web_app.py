@@ -12,8 +12,9 @@ from modules import theme
 
 # function initializes the web application
 def init_webapp():
-    # loads first level (levels/level0.py) from file system
-    level_handler.load_level()
+    # sets number of levels by number of json file in level directory
+    # and callback initialization functions which depends on level_number
+    level_handler.set_number_of_level(callback=init_objects_based_on_level_number)
 
     # sets font-size of buttons relative to height of button and sizes of body
     theme.set_button_size()
@@ -33,15 +34,23 @@ def init_webapp():
     # sets event handler on resize events to fit canvas and coordinates to changed size
     canvas.set_resize_event_handler()
 
-    # initializes empty and hidden levels container for exported html content
-    export.initialize_levels_container(6)
-
     # sets event handler for close of modal
     solution.set_event_listeners_for_close_solution_modal()
     initcode.set_event_listeners_for_close_initcode_modal()
     export.set_event_listeners_for_close_qrcode_modal()
     export.set_event_listeners_for_close_print_modal()
 
+# callback function called by set_number_of_level calls initialization functions which depends on level_number
+def init_objects_based_on_level_number(level_number):
+    # initializes flags in already_loaded array with zeros
+    level_handler.init_already_loaded(level_number)
+    
+    # loads first level (levels/level0.py) from file system
+    level_handler.load_level()
+    
+    # initializes empty and hidden levels container for exported html content
+    export.init_levels_container(level_number)
+    
 
 init_webapp()
 

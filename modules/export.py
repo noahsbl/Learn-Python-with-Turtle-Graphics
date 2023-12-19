@@ -24,11 +24,11 @@ def export_qrcode(ev):
     create_html(upload_html)
 
 
-# function is called onload to create container with containers for alle levels
-def initialize_levels_container(level_num):
+# function is called onload to create container with containers for all levels
+def init_levels_container(level_number):
     levels_container = document["levelsContainer"]
 
-    for level in range(level_num):
+    for level in range(level_number):
         level_container = create_container("level " + str(level))
 
         level_container.appendChild(create_title("H2", "Level " + str(level)))
