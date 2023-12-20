@@ -16,7 +16,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Use default target directory if not provided
-target_directory="${target_directory:-$default_target_directory}"
+target_directory="${target_directory:-$default_target_directory}" || exit 1
 
 # Check if target directory exists
 if [ -d "$target_directory" ]; then
@@ -24,7 +24,7 @@ if [ -d "$target_directory" ]; then
     if [ ! -f "$target_directory/web_app.py" ]; then
         # If web_app.py is not present, update the repository
         rm -rf "$target_directory"
-        git clone "$repository_url" "$target_directory"
+        git clone "$repository_url" "$target_directory" || exit 1
     else
         # If it exists, update the repository
         cd "$target_directory" || exit 1
@@ -33,7 +33,7 @@ if [ -d "$target_directory" ]; then
     fi
 else
     # If it doesn't exist, clone the repository
-    git clone "$repository_url" "$target_directory"
+    git clone "$repository_url" "$target_directory" || exit 1
 fi
 
 # Change to the target directory
