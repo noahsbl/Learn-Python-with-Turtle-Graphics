@@ -65,7 +65,7 @@ def set_button_size():
         if is_dropdown_button(button) or is_button_in_modal(button) or is_darkmode_button(button):
             button_height = document["run_code"].clientHeight
 
-        factor = 0.32
+        factor = 0.26
         font_size = factor * (body_width / body_height) * button_height
 
         button.style.fontSize = str(font_size) + "px"

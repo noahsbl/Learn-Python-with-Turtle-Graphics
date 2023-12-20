@@ -16,7 +16,7 @@
 
 button {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     background-color: white;
     border: none;
     box-shadow: var(--normal-shadow);
@@ -24,6 +24,7 @@ button {
     white-space: nowrap;
     overflow: hidden;
     padding: 0;
+    font: bolder;
 }
 
 button:hover {
@@ -65,7 +66,7 @@ button:active {
 
 .run-button {
     --height: 100;
-    --width: 9;
+    --width: 7;
     --parent-height: 5;
     --parent-width: 48.5;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -80,7 +81,7 @@ button:active {
 
 .coordinatesystem-button {
     --height: 100;
-    --width: 35;
+    --width: 28;
     --parent-height: 5;
     --parent-width: 48.5;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -93,7 +94,7 @@ button:active {
 
 .initcode-button {
     --height: 100;
-    --width: 27;
+    --width: 23;
     --parent-height: 5;
     --parent-width: 48.5;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -106,7 +107,7 @@ button:active {
 
 .solution-button {
     --height: 100;
-    --width: 15;
+    --width: 11;
     --parent-height: 5;
     --parent-width: 48.5;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -119,7 +120,7 @@ button:active {
 
 .darkmode-button {
     --height: var(--nav-button-height);
-    --width: 37;
+    --width: 28;
     --parent-height: 7;
     --parent-width: 40;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -136,7 +137,7 @@ button:active {
 .dropdown-button,
 .dropdown-menu button {
     --height: var(--nav-button-height);
-    --width: 40;
+    --width: 30;
     --parent-height: 7;
     --parent-width: 40;
     --radius-width: calc((100 / ((var(--parent-width) * var(--width)) / 100)) / var(--aspect-ratio));
@@ -150,7 +151,7 @@ button:active {
 
 .dropdown {
     margin-right: var(--navbar-right-margin);
-    width: 40%;
+    width: 30%;
     position: relative;
     display: inline-block;
     float: right;

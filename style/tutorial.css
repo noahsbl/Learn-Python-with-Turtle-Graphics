@@ -6,15 +6,20 @@
 }
 
 .p-font {
-    font-size: 14px;
+    font-size: 1rem;
     margin: 0;
 }
 
 .code-hint {
+    border-radius: 0;
+    background-color: #8787870f;
+    border: #8787872a solid 3px;
     border-left: #8787872a solid 29px;
-    padding-left: 10px;
+    width: min-content;
+    padding: 5px;
 }
 
 .code-hint-font {
-    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
 }
