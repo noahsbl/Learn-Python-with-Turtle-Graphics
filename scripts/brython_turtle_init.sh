@@ -20,24 +20,34 @@ target_directory="${target_directory:-$default_target_directory}" || exit 1
 
 # Check if target directory exists
 if [ -d "$target_directory" ]; then
-    # If it exists, check if web_app.py is present
-    if [ ! -f "$target_directory/web_app.py" ]; then
-        # If web_app.py is not present, update the repository
-        rm -rf "$target_directory"
+    # Check if target directory is empty
+    if [ -z "$(ls -A "$target_directory")" ]; then
+        # If it exists and is empty, update the repository
         git clone "$repository_url" "$target_directory" || exit 1
     else
-        # If it exists, update the repository
-        cd "$target_directory" || exit 1
-        git pull
-        cd ..
+        # If it exists and has content, check if web_app.py is present
+        if [ ! -f "$target_directory/web_app.py" ]; then
+            # If web_app.py is not present, prompt user to confirm overwriting
+            read -p "Is this non-empty directory the right one and should it really be overwritten? (y/n): " answer
+            if [ "$answer" != "y" ]; then
+                echo "Aborted. Exiting."
+                exit 1
+            fi
+            # Remove existing content and clone repository
+            rm -rf "$target_directory"
+            git clone "$repository_url" "$target_directory" || exit 1
+        else
+            # If it exists and has content, update the repository
+            cd "$target_directory" || exit 1
+            git pull || exit 1
+        fi
     fi
 else
     # If it doesn't exist, clone the repository
     git clone "$repository_url" "$target_directory" || exit 1
+    # Change to the target directory
+    cd "$target_directory" || exit 1
 fi
-
-# Change to the target directory
-cd "$target_directory" || exit 1
 
 # Determine the available Python version
 if command -v python3 &> /dev/null; then
