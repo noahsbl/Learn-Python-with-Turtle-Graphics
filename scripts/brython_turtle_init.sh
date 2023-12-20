@@ -55,6 +55,3 @@ echo "http://localhost:8000/code-editor.html"
 
 # Start Python HTTP server (default port 8000)
 $python_cmd -m http.server
-
-# Optional:
-# python -m http.server
