@@ -1,19 +1,32 @@
 #!/bin/bash
 
-# GitHub Repository URL
-repository_url="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics.git"
-
-# Default target directory
-default_target_directory="Learn-Python-with-Turtle-Graphics"
+# Function to display help
+display_help() {
+    echo "Usage: $0 [options]"
+    echo "Initializes the Learn-Python-with-Turtle-Graphics repository and starts the Brython server."
+    echo
+    echo "Options:"
+    echo "  -dir, --directory DIRECTORY  Specify the target directory. Default is 'Learn-Python-with-Turtle-Graphics' in this directory."
+    echo "  -h, --help                   Display this help message."
+    echo
+    exit 0
+}
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         -dir|--directory) target_directory="$2"; shift ;;
+        -h|--help) display_help ;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
 done
+
+# GitHub Repository URL
+repository_url="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics.git"
+
+# Default target directory
+default_target_directory="Learn-Python-with-Turtle-Graphics"
 
 # Use default target directory if not provided
 target_directory="${target_directory:-$default_target_directory}" || exit 1
