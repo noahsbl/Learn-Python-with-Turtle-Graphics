@@ -36,7 +36,7 @@ if [ ! -e "$html_file" ]; then
 fi
 
 # Read the HTML file, process, and create a single line string
-html_string=$(awk '{gsub(/\r/,""); gsub(/"/,"\\\\\""); gsub(/'\''/,"\\\\'\''"); printf "%s", $0}' "$html_file")
+html_string=$(awk '{gsub(/\r/,""); gsub(/"/,"\\\""); printf "%s", $0}' "$html_file")
 
 # Replace line breaks (Windows -> Unix) and multiple spaces
 html_string="${html_string//$'\r'/}"

@@ -36,7 +36,7 @@ if [ ! -e "$python_file" ]; then
 fi
 
 # Read the Python file, process, and create a single line string
-python_string=$(awk '{gsub(/\r/,""); gsub(/\t/,"\\t"); gsub(/"/,"\\\""); gsub(/'\''/,"\\'\''"); printf "%s\\n", $0}' "$python_file")
+python_string=$(awk '{gsub(/\r/,""); gsub(/\t/,"\\t"); gsub(/"/,"\\\""); printf "%s\\n", $0}' "$python_file")
 
 # Check if an output file is specified
 if [ "$#" -ge 2 ]; then

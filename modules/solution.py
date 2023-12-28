@@ -34,16 +34,20 @@ def set_solution(solution):
 
 # function extracts comments from given code
 def get_solution_comments(code):
-    code = re.sub(re.compile(r"(.*)#"), r"#", code)
     lines = code.split("\n")
+    comment_lines = []
 
-    for i in range(len(lines)):
-        line = lines[i]
+    for line in lines:
+        if "#" in line:
+            tabs = ""
+            num_of_tabs = code_mirror.count_tabs_in_line(line)
+            for i in range(num_of_tabs):
+                tabs += "\t"
+            comment_lines.append(tabs + re.sub(re.compile(r"(.*)#"), r"#", line))
+        else:
+            comment_lines.append("")
 
-        if "#" not in line:
-            lines[i] = ""
-
-    return "\n".join(lines)
+    return "\n".join(comment_lines)
 
 
 # function sets event listeners for close solution modal
