@@ -3,6 +3,8 @@ import re
 
 from modules import code_mirror
 
+password = "Passwort"
+
 
 # button function for show solution modal with comment solution
 def show_solution(ev):
@@ -18,7 +20,7 @@ def paste_solution(ev):
 
 # button function for check password and show code solution
 def show_solution_code(ev):
-    if document["solution_password"].value == "Passwort":
+    if document["solution_password"].value == password:
         document["solution_comments_container"].style.display = "none"
         document["solution_code_container"].style.display = "block"
         document["solution_password"].value = ""
