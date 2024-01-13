@@ -3,7 +3,7 @@
 # Function to display help
 display_help() {
     echo "Usage: $0 [options]"
-    echo "Initializes the Learn-Python-with-Turtle-Graphics repository and starts the Brython server."
+    echo "Initializes the Learn-Python-with-Turtle-Graphics repository, starts the Python HTTP-server and opens webapp."
     echo
     echo "Options:"
     echo "  -dir, --directory DIRECTORY  Specify the target directory. Default is 'Learn-Python-with-Turtle-Graphics' in this directory."
@@ -72,9 +72,22 @@ else
     exit 1
 fi
 
-# Print the link before starting the Python HTTP server
-echo "Open the following link in your browser:"
-echo "http://localhost:8000/code-editor.html"
+# Open Webapp or printing URL before starting the Python HTTP server
+website_url="http://localhost:8000/code-editor.html"
+
+# Try to open Webapp in Linux-Default-Browser
+if command -v xdg-open >/dev/null; then
+  xdg-open "$website_url"
+
+# If xdg-open doesn't exist (if OS is not Linux), then try to open Webapp in macOS-Default-Browser
+elif command -v open >/dev/null; then
+  open "$website_url"
+
+# If non of the commands below opens the Webapp in Default-Browser, just print URL
+else
+  echo "Open the following link in your browser:"
+  echo "$website_url"
+fi
 
 # Start Python HTTP server (default port 8000)
 $python_cmd -m http.server
