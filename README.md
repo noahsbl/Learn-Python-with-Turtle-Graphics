@@ -1,34 +1,45 @@
-# Projektgruppe WS23/24 (Programmiererlebnisse)
-
-## Projektteam
+# Learn Python with Turtle Graphics
+- Szenario der Projektgruppe WS23/24 (Programmiererlebnisse)
+- Hochschule Emden/Leer
 
 ### Stakeholder: 
 - Prof. Carsten Link
-### Scrum Master
-- Viet Hai Nguyen (7021478)
-### Product Owner
-- Marcus Rosengart
+- Frederik Gosewehr, M.Eng.
 ### Entwicklerteam
-- Name 1
-- Name 2
-- Name 3
+- Tom Bohne
+- Niklas Hagengers
+- Noah Saibel
 
 
-## Geplantes Vorgehen (Scrum)
+## Webanwendung zum interaktiven Erlernen von Python
+Dieses Projekt ist im Rahmen des Moduls Projektgruppe an der Hochschule Emden/Leer entstanden.
+Hierbei handelt es sich um eine interaktive Webanwendung, die Schülerinnen und Schülern ein Programmiererlebnis bietet. Die Webanwendung vermittelt spielerisch durch mehrere Level grundlegende Konzepte der Programmierung mit Python.
+Die clientseitige Logik basiert auf Brython, während Turtle Graphics für die Visualisierung im interaktiven Lernprozess verwendet wird.
 
-Geplantes Vorhaben, definiert durch den Arbeitsablauf mit Scrum:
-- Im Produkt Backlog befinden sich die angesammelten bekannten Anforderungen, also der Auftragsbestand
-    - Dieser wird in Form von sog. „Issues“ angelegt
--  Ausgewählte Issues werden alle 14 Tage in den Sprint-Backlog geschoben
--  Daraus entsteht ein 2-wöchiger Sprint, der von einem Daily Scrum begleitet wird
--   Ein Daily Scrum kann in Form eines Standups abgehalten werden
-    - Die Teammitglieder stellen kurz vor, woran sie arbeiten, was sie vorhaben und ob alles rund läuft.
-    - Der Scrum Master sorgt u.a. dafür, dass alle Mitglieder ohne Probleme arbeiten können, sollten Probleme auftreten.
-- Am Ende des Sprints steht die CI (Code Integration)
-    - Die Software ist nun bestenfalls mit den gewünschten Features, die zu Anfang des Sprints im Sprint-Backlog waren, inkrementell verbessert.
-- Im Sprint Review kommen die Teammitglieder inkl. SM und PO zusammen
-    - Man tauscht sich über die Ergebnisse des letzten Sprints aus und organisiert den Fortschritt
-- In der Sprint-Retrospektive geht es nach dem Sprint dann mehr darum, was beim Sprint gut oder schlecht lief und was man besser machen kann.
-    - Oft veranschaulicht mit Themen auf Whiteboards (auch digital)
-    - Der SM ist der Moderator
-- Vor jedem Sprint findet zudem die Sprintplanung statt, in welchem Issues bzw. Anforderungen aus dem Produkt-Backlog in den Sprint-Backlog übernommen werden und zu einem neuen Sprint (mit eben diesen Issues) übergehen.
+### Installation und Inbetriebnahme der Webanwendung
+Mittels des Scripts [brython_turtle_init.sh](./scripts/brython_turtle_init.sh) wird die Webanwendung in einem Zielordner gecloned, der Server gestartet und das Frontend im Browser geöffnet. Die Hilfsfunktion des Scripts ist im Folgenden dargestellt:
+```
+Usage: ./brython_turtle_init.sh [options]
+Initializes the Learn-Python-with-Turtle-Graphics repository, 
+starts the Python HTTP-server and opens webapp.
+
+Options:
+  -dir, --directory DIRECTORY   Specify the target directory. Default is 'Learn-Python-with-Turtle-Graphics'.
+  -h, --help                    Display this help message.
+```
+Existiert die Anwendung bereits im Zielordner wird gepullt um die neuste Version zu laden.
+
+### Anleitungen
+Die [Dokumentation des Projekts](./documentation/Dokumentation.pdf) mit Hilfestellung für Weiterentwicklung, eine [Anleitung für Schülerinnen und Schüler](./documentation/Schüler-PDF.pdf) sowie eine [Anleitung für Dozentinnen und Dozenten](./documentation/Lehrer-PDF.pdf) befinden sich im Ordner [documentation](./documentation).
+
+
+### Lizenz
+Dieses Projekt ist unter der GNU General Public License lizensiert. Bitte lesen Sie die [LICENSE.md](./LICENSE.md) für weitere Details.
+
+### Externe Bibliotheken
+Die folgenden externen Bibliotheken werden in diesem Projekt verwendet. Die jeweiligen Lizenzen finden Sie in den hinterlegten Lizenz-Dateien:
+
+- [Brython](./lib/brython/LICENSE)
+- [CodeMirror](./lib/codemirror/LICENSE)
+- [D3.js](./lib/d3/LICENSE)
+- [qrcode.js](./lib/qrcode/LICENSE)
