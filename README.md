@@ -30,8 +30,7 @@ Options:
 Existiert die Anwendung bereits im Zielordner wird gepullt um die neuste Version zu laden.
 
 ### Anleitungen
-Die [Dokumentation des Projekts](./documentation/Dokumentation.pdf) mit Hilfestellung für Weiterentwicklung, eine [Anleitung für Schülerinnen und Schüler](./documentation/Schüler-PDF.pdf) sowie eine [Anleitung für Dozentinnen und Dozenten](./documentation/Lehrer-PDF.pdf) befinden sich im Ordner [documentation](./documentation).
-
+Die Dokumenation des Szenarios ist im Abschnitt 2 der Datei [Dokumentation.pdf](./documentation/Dokumentation.pdf) zu finden. Diese enthält neben einer Produktbeschreibung, die Dokumetation der Umsetzung und Hilfestellung für mögliche Weiterentwicklungen in Form von Schnittstellenbeschreibungen. Eine Anleitung für Schülerinnen und Schüler befindet sich in der Datei [Schüler-PDF.pdf](./documentation/Schüler-PDF.pdf). Diese enthält eine Bedienungsanleitung zur Webanwendung sowie auch  und Erläuterungen zu den Programmierkonzepten und zum Einsatz von Turtle Graphics. Die Datei [Lehrer-PDF.pdf](./documentation/Lehrer-PDF.pdf) dient als Anleitung für Dozentinnen und Dozenten. Diese beinhaltet Anleitungen zur Installation und Inbetriebnahme der Webanwendung, unterstützt beim Erstellen neuer Levels und gibt Anleitung zur Passwortänderung für Lösungen in der Webanwendung. Zusätzlich enthält die Lehrer-PDF Musterlösungen für jedes Level und Hilfestellungen bei typischerweise auftrettenden Fehlermeldungen.
 
 ### Lizenz
 Dieses Projekt ist unter der GNU General Public License lizensiert. Bitte lesen Sie die [LICENSE.md](./LICENSE.md) für weitere Details.
