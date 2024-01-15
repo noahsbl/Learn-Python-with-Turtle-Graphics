@@ -1,5 +1,5 @@
-# Learn Python with Turtle Graphics - Hochschule Emden/Leer
-Szenario der Projektgruppe WS23/24 (Programmiererlebnisse)
+# Learn Python with Turtle Graphics
+Szenario der Projektgruppe WS23/24 (Programmiererlebnisse) an der Hochschule Emden / Leer
 
 ### Stakeholder: 
 - Prof. Carsten Link
