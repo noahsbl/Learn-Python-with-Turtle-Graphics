@@ -1,6 +1,8 @@
-This project uses various libraries, each with its own license. Here are the license details:
+Learn Python with Turtle Graphics is a web application designed to facilitate educational exploration and inspire students to begin their coding journey.
+Copyright (C) 2024 Tom Bohne, Niklas Hagengers, Noah Saibel
 
-- Brython: See [lib/brython/LICENSE](./lib/brython/LICENSE)
-- CodeMirror: See [lib/codemirror/LICENSE](./lib/codemirror/LICENSE)
-- D3.js: See [lib/d3/LICENSE](./lib/d3/LICENSE)
-- QRCode: See [lib/qrcode/LICENSE](./lib/qrcode/LICENSE)
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>.
