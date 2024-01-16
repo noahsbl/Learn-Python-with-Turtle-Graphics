@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1 id="learn-python-with-turtle-graphics">Learn Python with Turtle Graphics</h1>
+    <p>Szenario der Projektgruppe WS23/24 (Programmiererlebnisse) an der Hochschule Emden / Leer</p>
+    <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics">GitHub Repository</a>
+    <h3 id="stakeholder-">Stakeholder:</h3>
+    <ul>
+    <li>Prof. Carsten Link</li>
+    <li>Frederik Gosewehr, M.Eng.</li>
+    </ul>
+    <h3 id="entwicklerteam-">Entwicklerteam:</h3>
+    <ul>
+    <li>Tom Bohne</li>
+    <li>Niklas Hagengers</li>
+    <li>Noah Saibel</li>
+    </ul>
+    <h2 id="webanwendung-zum-interaktiven-erlernen-von-python">Webanwendung zum interaktiven Erlernen von Python</h2>
+    <p><img src="https://raw.githubusercontent.com/noahsbl/Learn-Python-with-Turtle-Graphics/main/images/Webapplication.png" width="800" alt=""></p><br/>
+    Dieses Projekt ist im Rahmen des Moduls Projektgruppe an der Hochschule Emden/Leer entstanden.
+    Hierbei handelt es sich um eine interaktive Webanwendung, die Schülerinnen und Schülern ein Programmiererlebnis bietet. Die Webanwendung vermittelt spielerisch durch mehrere Level grundlegende Konzepte der Programmierung mit Python.
+    Die clientseitige Logik basiert auf Brython, während Turtle Graphics für die Visualisierung im interaktiven Lernprozess verwendet wird.</p>
+    <h3 id="installation-und-inbetriebnahme-der-webanwendung">Installation und Inbetriebnahme der Webanwendung</h3>
+    <p>Mittels des Scripts <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/scripts/brython_turtle_init.sh">brython_turtle_init.sh</a> wird die Webanwendung in einem Zielordner gecloned, der Server gestartet und das Frontend im Browser geöffnet. Die Hilfsfunktion des Scripts ist im Folgenden dargestellt:</p>
+    <pre><code>Usage: ./brython_turtle_init.<span class="hljs-keyword">sh</span> [<span class="hljs-keyword">options</span>]
+Initializes the Learn-Python-with-Turtle-Graphics repository, 
+starts the Python HTTP-server <span class="hljs-built_in">and</span> opens webapp.
+
+Option<span class="hljs-variable">s:</span>
+    -dir, --directory DIRECTORY   Specify the target directory. Default <span class="hljs-keyword">is</span> <span class="hljs-string">'Learn-Python-with-Turtle-Graphics'</span>.
+    -h, --<span class="hljs-keyword">help</span>                    Display this <span class="hljs-keyword">help</span> message.
+    </code></pre><p>Existiert die Anwendung bereits im Zielordner wird gepullt um die neuste Version zu laden.</p>
+    <h3 id="anleitungen">Anleitungen</h3>
+    <p>Die Dokumenation des Szenarios ist im Abschnitt 2 der Datei <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/documentation/Dokumentation.pdf">Dokumentation.pdf</a> zu finden. Diese enthält neben einer Produktbeschreibung, die Dokumetation der Umsetzung und Hilfestellung für mögliche Weiterentwicklungen in Form von Schnittstellenbeschreibungen.  </p>
+    <p>Eine Anleitung für Schülerinnen und Schüler befindet sich in der Datei <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/documentation/Schueler-PDF.pdf">Schüler-PDF.pdf</a>. Diese enthält eine Bedienungsanleitung zur Webanwendung sowie auch  und Erläuterungen zu den Programmierkonzepten und zum Einsatz von Turtle Graphics.  </p>
+    <p>Die Datei <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/documentation/Lehrer-PDF.pdf">Lehrer-PDF.pdf</a> dient als Anleitung für Dozentinnen und Dozenten. Diese beinhaltet Anleitungen zur Installation und Inbetriebnahme der Webanwendung, unterstützt beim Erstellen neuer Levels und gibt Anleitung zur Passwortänderung für Lösungen in der Webanwendung. Zusätzlich enthält die Lehrer-PDF Musterlösungen für jedes Level und Hilfestellungen bei typischerweise auftrettenden Fehlermeldungen.</p>
+    <h3 id="lizenz">Lizenz</h3>
+    <p>Dieses Projekt ist unter der GNU General Public License lizensiert. Bitte lesen Sie die <a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/LICENSE.md">LICENSE.md</a> für weitere Details.</p>
+    <h3 id="externe-bibliotheken">Externe Bibliotheken</h3>
+    <p>Die folgenden externen Bibliotheken werden in diesem Projekt verwendet. Die jeweiligen Lizenzen finden Sie in den hinterlegten Lizenz-Dateien:</p>
+    <ul>
+    <li><a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/lib/brython/LICENSE">Brython</a></li>
+    <li><a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/lib/codemirror/LICENSE">CodeMirror</a></li>
+    <li><a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/lib/d3/LICENSE">D3.js</a></li>
+    <li><a href="https://github.com/noahsbl/Learn-Python-with-Turtle-Graphics/blob/main/lib/qrcode/LICENSE">qrcode.js</a></li>
+    </ul>
+</body>

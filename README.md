@@ -4,13 +4,14 @@ Szenario der Projektgruppe WS23/24 (Programmiererlebnisse) an der Hochschule Emd
 ### Stakeholder: 
 - Prof. Carsten Link
 - Frederik Gosewehr, M.Eng.
-### Entwicklerteam
+### Entwicklerteam:
 - Tom Bohne
 - Niklas Hagengers
 - Noah Saibel
 
 
 ## Webanwendung zum interaktiven Erlernen von Python
+![](./images/Webapplication.png)
 Dieses Projekt ist im Rahmen des Moduls Projektgruppe an der Hochschule Emden/Leer entstanden.
 Hierbei handelt es sich um eine interaktive Webanwendung, die Schülerinnen und Schülern ein Programmiererlebnis bietet. Die Webanwendung vermittelt spielerisch durch mehrere Level grundlegende Konzepte der Programmierung mit Python.
 Die clientseitige Logik basiert auf Brython, während Turtle Graphics für die Visualisierung im interaktiven Lernprozess verwendet wird.
