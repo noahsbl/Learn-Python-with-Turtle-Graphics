@@ -1,5 +1,5 @@
 {
-    "tutorial": "<p class=\"p-font\"><b>Herzlichen Glückwunsch! Sie haben alle Aufgaben geschafft. Hier können Sie nun mit dem Code-Editor herumexperimentieren und Sachen ausprobieren, die Sie vorher schon ausprobieren wollten, ohne dabei Ihren aktuellen Code zu zerstören.</b></p>",
+    "tutorial": "<p class=\"p-font\"><b>Herzlichen Glückwunsch! Alle Aufgaben sind geschafft. Dieses Level ist eine Sandbox. Hier kann man mit dem Code-Editor herumexperimentieren und frei zeichnen.</b></p>",
     "init_code": "t = init_turtle(turtle) # Diese Zeile bitte nicht entfernen oder ändern\n\n",
     "solution_code": ""
 }
