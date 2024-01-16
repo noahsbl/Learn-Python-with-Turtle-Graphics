@@ -4,7 +4,7 @@ Szenario der Projektgruppe WS23/24 (Programmiererlebnisse) an der Hochschule Emd
 ### Stakeholder: 
 - Prof. Carsten Link
 - Frederik Gosewehr, M.Eng.
-### Entwicklerteam
+### Entwicklerteam:
 - Tom Bohne
 - Niklas Hagengers
 - Noah Saibel
