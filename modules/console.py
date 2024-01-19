@@ -15,7 +15,7 @@ def extract_relevant_part_of_error_message(error_message):
 
 
 # function to print to console of web application
-def writeConsole(*args):
+def write_console(*args):
     if args[0] == "\n":
         document["console"].html += "<br/>"
     else:
@@ -25,8 +25,8 @@ def writeConsole(*args):
 
 # function redirects prints and errors to console of web application
 def redirect_prints_and_errors_to_console():
-    sys.stdout.write = writeConsole
-    sys.stderr.write = writeConsole
+    sys.stdout.write = write_console
+    sys.stderr.write = write_console
 
 
 # function clears console
