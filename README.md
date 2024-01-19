@@ -2,7 +2,7 @@
 Szenario der Projektgruppe WS23/24 (Programmiererlebnisse) an der Hochschule Emden / Leer
 
 ### Stakeholder: 
-- Prof. Carsten Link
+- Prof. Dr. Carsten Link
 - Frederik Gosewehr, M.Eng.
 ### Entwicklerteam:
 - Tom Bohne
