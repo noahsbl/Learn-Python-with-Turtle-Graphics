@@ -30,7 +30,7 @@ Options:
 Existiert die Anwendung bereits im Zielordner wird gepullt um die neuste Version zu laden.
 
 ### Anleitungen
-Die Dokumenation des Szenarios ist im Abschnitt 2 der Datei [Dokumentation.pdf](./documentation/Dokumentation.pdf) zu finden. Diese enthält neben einer Produktbeschreibung, die Dokumetation der Umsetzung und Hilfestellung für mögliche Weiterentwicklungen in Form von Schnittstellenbeschreibungen.  
+Die Dokumenation des Szenarios ist im Abschnitt 2 der Datei [Dokumentation.pdf](./documentation/Dokumentation.pdf) zu finden. Diese enthält neben einer Produktbeschreibung, die Dokumentation der Umsetzung und Hilfestellung für mögliche Weiterentwicklungen in Form von Schnittstellenbeschreibungen.  
   
 Eine Anleitung für Schülerinnen und Schüler befindet sich in der Datei [Schüler-PDF.pdf](./documentation/Schueler-PDF.pdf). Diese enthält eine Bedienungsanleitung zur Webanwendung sowie auch  und Erläuterungen zu den Programmierkonzepten und zum Einsatz von Turtle Graphics.  
   
